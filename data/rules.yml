@@ -1,0 +1,67 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+  - action: action_deactivate_loop
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Say "done" to end process with bot
+  steps:
+  - intent: done_with_bot
+  - action: utter_thank_customer
+
+- rule: Say "new flight" anytime to start new form again
+  steps:
+  - intent: new_form
+  - action: action_process_refresh
+  - action: search_form
+  - active_loop: null
+  - slot_was_set:
+    - 1_departure_location: 'San Jose'
+    - 2_destination: 'New York'
+    - 3_flight_date: '11/21/2014'
+    - 4_stops_or_not: 'nonstops'
+    - 5_cabin_class: 'Business'
+    - 6_ticket_numbers: '1 ticket'
+    - 7_names: 'Rain Yi'
+    - 8_contact_info: 'phone number is 408787747'
+   # - requested_slot: null
+  - action: utter_finished_form
+  - action: action_confirmation_msg
+  - action: utter_next_step
+
+- rule: Submit Search form 
+  condition:
+  - active_loop: search_form
+  steps:
+  - action: search_form
+  - active_loop: null
+  - slot_was_set:
+    - 1_departure_location: 'San Jose'
+    - 2_destination: 'New York'
+    - 3_flight_date: '11/21/2014'
+    - 4_stops_or_not: 'nonstops'
+    - 5_cabin_class: 'Business'
+    - 6_ticket_numbers: '1 ticket'
+    - 7_names: 'Rain Yi'
+    - 8_contact_info: 'phone number is 408787747'
+   # - requested_slot: null
+  - action: utter_finished_form
+  - action: action_confirmation_msg
+  - action: utter_next_step
+
+    
+
+#- rule: Activate form
+#  steps:
+#  - action: search_form
+#  - active_loop: search_form
+#  - action: utter_finished_form 

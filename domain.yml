@@ -1,0 +1,206 @@
+version: "2.0"
+
+intents:
+  - greet
+  - good_mood
+  - bad_mood
+  - goodbye
+  - affirm_service
+  - deny_service
+  - questions
+  - search_flight
+  - from_location
+  - to_location
+  - flight_date
+  - class_level
+  - stops_or_not
+  - nums_ticket
+  - customer_names
+  - contact_info
+  - another_flight
+  - end_actions
+  - bot_challenge
+  - new_form
+  - done_with_bot
+
+entities:
+  - departure
+  - destination
+  - date
+  - stops
+  - class
+  - ticket_numbers
+  - names
+  - phone_numbers
+
+responses:
+  utter_greet:
+  - text: "Hey! Welcome to CalFly"
+
+  utter_ask_mood:
+  - text: "How are you doing today?"
+
+  utter_response_good:
+  - text: "I'm glad to hear that."
+
+  utter_response_bad:
+  - text: "I'm sorry to hear that."
+
+  utter_affirm_process:
+  - text: "How can I help you?"
+
+  utter_service_answer:
+  - text: "You can search for a flight or book for a flight."
+
+  utter_ask_locations:
+  - text: "Start searching or booking by entering departure locations and destination."
+
+  utter_ask_search_form_1_departure_location:
+  - text: "Please enter departure location."
+
+  utter_ask_1_departure_location:
+  - text: "Invalid departure location."
+
+  utter_ask_search_form_2_destination:
+  - text: "Please enter destination location."
+
+  utter_ask_2_destination:
+  - text: "Invalid destination location."
+
+  utter_ask_search_form_3_flight_date:
+  - text: "Please enter the date of the flight you want to search in mm/dd/yyyy or mm-dd-yyyy format."
+
+  utter_ask_3_flight_date:
+  - text: "Invalid date."
+
+  utter_ask_search_form_4_stops_or_not:
+  - text: "Do you want nonstops flight or allow stops?"
+
+  utter_ask_4_stops_or_not:
+  - text: "Invalid answer."
+
+  utter_ask_search_form_5_cabin_class:
+  - text: "Do you want search for Econony, Premium Economy, Business, or First class?"
+
+  utter_ask_5_cabin_class:
+  - text: "Invalid cabin class."
+
+  utter_ask_search_form_6_ticket_numbers:
+  - text: "How many number of tickets you want to book?"  
+
+  utter_ask_6_ticket_numbers:
+  - text: "Invalid ticket numbers."  
+
+  utter_ask_search_form_7_names:
+  - text: "Please enter names for the flight."
+
+  utter_ask_7_names:
+  - text: "Invalid names."
+
+  utter_ask_search_form_8_contact_info:
+  - text: "Please enter your contact information."
+
+  utter_ask_8_contact_info:
+  - text: "Invalid contact information."
+
+  utter_finished_form:
+  - text: "The flight is booked."
+
+  utter_wrong_input:
+  - text: The "{wrong_input}" is not valid input.
+
+  utter_next_step:
+  - text: What else can I do for you?
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye, see you next time."
+
+  utter_thank_customer:
+  - text: "Thank you for choosing CalFly. Have a nice day."
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+actions:
+ # - action_start_process
+  - validate_search_form
+  - action_confirmation_msg
+  - action_process_refresh
+
+slots:
+  begin_process:
+    type: bool
+    influence_conversation: True
+  1_departure_location:
+    type: text
+    influence_conversation: true
+  2_destination:
+    type: text
+    influence_conversation: true
+  3_flight_date:
+    type: text
+    influence_conversation: true
+  4_stops_or_not:
+    type: text
+    influence_conversation: true
+  5_cabin_class:
+    type: text
+    influence_conversation: true
+  6_ticket_numbers:
+    type: text
+    influence_conversation: true
+  7_names:
+    type: text
+    influence_conversation: true
+  8_contact_info:
+    type: text
+    influence_conversation: true
+
+forms:
+  search_form:
+    1_departure_location:
+    - type: from_text
+      entity: departure
+      intent: from_location   
+    2_destination:
+    - type: from_text
+      entity: destination
+      intent: to_location
+    3_flight_date:
+    - type: from_text
+      entity: date
+      intent: flight_date
+    4_stops_or_not:
+    - type: from_text
+      entity: stops
+      intent: stops_or_not
+    5_cabin_class:
+    - type: from_text
+      entity: class
+      intent: class_level
+    6_ticket_numbers:
+    - type: from_text
+      entity: ticket_numbers
+      intent: nums_ticket
+    7_names:
+    - type: from_text
+      entity: names
+      intent: customer_names
+    8_contact_info:
+    - type: from_text
+      entity: phone_numbers
+      intent: contact_info
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

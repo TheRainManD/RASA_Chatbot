@@ -1,0 +1,88 @@
+version: "2.0"
+
+stories:
+
+- story: begin process from greet with good mood
+  steps:
+  - intent: greet
+ # - action: action_start_process
+  - action: utter_greet
+  - action: utter_ask_mood
+  - intent: good_mood
+  - action: utter_response_good
+  - action: utter_affirm_process
+
+- story: begin process from greet with bad mood
+  steps:
+  - intent: greet
+ # - action: action_start_process
+  - action: utter_greet
+  - action: utter_ask_mood
+  - intent: bad_mood
+  - action: utter_response_bad
+  - action: utter_cheer_up
+  - action: utter_affirm_process
+
+- story: new user path 1
+  steps:
+  - intent: questions
+  - action: utter_service_answer
+  - intent: deny_service
+  - action: utter_goodbye
+
+- story: new user path 2
+  steps:
+  - intent: questions
+  - action: utter_service_answer
+  - intent: affirm_service
+  - action: utter_ask_locations
+  - action: search_form
+  - active_loop: search_form
+  - slot_was_set: 
+    - requested_slot: 1_departure_location
+  - intent: from_location
+    entities: 
+      - departure: San Jose
+  - slot_was_set: 
+    - requested_slot: 2_destination
+  - intent: to_location
+    entities: 
+      - destination: New York
+  - slot_was_set: 
+    - requested_slot: 3_flight_date
+  - intent: flight_date
+    entities: 
+      - date: 11/12/2001
+  - slot_was_set: 
+    - requested_slot: 4_stops_or_not
+  - intent: stops_or_not
+    entities: 
+      - stops: nonstops
+  - slot_was_set: 
+    - requested_slot: 5_cabin_class
+  - intent: class_level
+    entities: 
+      - class: Business
+  - slot_was_set: 
+    - requested_slot: 6_ticket_numbers
+  - intent: nums_ticket
+    entities: 
+      - ticket_numbers: 1 ticket
+  - slot_was_set: 
+    - requested_slot: 7_names
+  - intent: customer_names
+    entities: 
+      - names: Rain Ya
+  - slot_was_set: 
+    - requested_slot: 8_contact_info
+  - intent: contact_info
+    entities: 
+      - phone_numbers: phone number is 408787747
+  - action: utter_finished_form
+  - action: action_confirmation_msg
+  - action: utter_next_step
+
+
+
+  
+

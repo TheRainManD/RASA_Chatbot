@@ -1,0 +1,337 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - good afternoon
+    - moin
+    - hey there
+    - Hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - goodafternoon
+
+- intent: good_mood
+  examples: |
+    - good
+    - I'm good
+    - I am good
+    - feeling good today
+    - feeling well today
+    - well
+    - not bad
+    - I'm fine
+    - great
+    - awesome
+    - excited
+    - busy 
+    - feeling ok today
+  
+- intent: bad_mood
+  examples: |
+    - bad
+    - feel bad today
+    - terrible 
+    - sad
+    - frustrated
+    - feeling terrible
+    - not good
+    - not well
+    - very bad 
+    - tired 
+
+- intent: questions
+  examples: |
+    - information
+    - info
+    - what is this?
+    - how will you help me?
+    - what services?
+    - what kind of services?
+    - how?
+    - how do I use this?
+    - how do i use this?
+    - can you help me?
+    - how can you help?
+    - what can you do?
+    - what service you provide?
+
+- intent: goodbye
+  examples: |
+    - cu
+    - see you later
+    - c u later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm_service
+  examples: |
+    - yes
+    - y
+    - of course
+    - that sounds good
+    - correct
+    - ok
+    - yup 
+    - okay
+    - sure
+    - yeah
+    - ya
+    - affirm
+    - search flight
+    - book flight
+    - search for a flight 
+    - book for a flight
+    - I need the service
+
+- intent: deny_service
+  examples: |
+    - no thank you 
+    - don't need it
+    - I don't need this service
+    - don't like that
+    - not
+    - not interested
+    - never
+    - nope
+    - na
+    - do not need it 
+    - deny
+    - no need 
+
+- intent: done_with_bot
+  examples: |
+    - that's it, thank you
+    - I'm done with everything
+    - that's it
+    - thank you 
+    - no, thank you
+    - no more
+    - that is it 
+    - that's all i need
+    - thank you for the help
+    - no more
+    - finish
+    - finish the chat
+    - finish the process
+
+- intent: new_form
+  examples: |
+    - I need another flight
+    - i need other flight
+    - i need another form
+    - new flight
+    - new form
+    - start new process
+    - start a new flight
+    - new process
+    - start new one
+    - again
+
+- intent: search_flight
+  examples: |
+    - search flight
+    - search flight ticket    
+    - search available flight
+    - available flight
+    - find flight
+    - find flight ticket
+    - fingd available flight 
+    - get flight ticked
+    - get flight
+    - book flight
+    - book flight ticket
+    - need a flight ticket
+    - need a flight
+    - find me a flight 
+    - get me a flight
+    - send me a flight detail
+  
+- intent: from_location
+  examples: |
+    - [san jose] (depature)
+    - [portland] (depature)
+    - [sacramento] (depature)
+    - [los angeles] (depature)
+    - from [new york] (depature)
+    - from [San Jose] (depature)
+    - departure [San Francisco] (depature)
+    - departure [Boston] (depature)
+    - departure location [boston] (depature)
+    - from [seattle] (depature)
+    - from [oakland] (depature)
+    - from [new york] (depature)
+    - from [san francisco] (depature)
+    - depart [san diego] (depature)
+    - depart [dallas] (depature)
+    - depart [phoenix] (depature)
+    - depart [detroit] (depature)
+    - from [austin] (depature)
+    - departure [tahoe] (depature)
+    - departure [atlanta] (depature)
+    - departure [orlando] (depature)
+    - [santa cruz] (depature)
+    - [stockton] (depature)
+   
+
+- intent: to_location
+  examples: |
+    - [kunming] (destination)
+    - [tokyo] (destination)
+    - [london] (destination)
+    - [berlin] (destination)
+    - [hawaii] (destination)
+    - [salt lake city] (destination)
+    - [dubai] (destination)
+    - [mexico city] (destination)
+    - [vancouver] (destination)
+    - [seoul] (destination)
+    - [beijing] (destination)
+    - to [kunming] (destination)
+    - to [hawaii] (destination)
+    - to [berlin] (destination)
+    - to [tokyo] (destination)
+    - to [seoul] (destination)
+    - arrival [kunming] (destination)
+    - arrival [dubai] (destination)
+    - arrival [mexico city] (destination)
+    - arrival [hawaii] (destination)
+    - arrival [london] (destination)
+    - arrival [kunming] (destination)
+    - to [tokyo] (destination)
+    - to [berlin] (destination)
+    - destination [hawaii] (destination)
+    - destination [vancouver] (destination)
+    - destination [dubai] (destination)
+    - destination [beijing] (destination)
+
+- regex: date
+  examples: |
+    - /(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d/
+    - \d{4}-\d{2}-\d{2}
+- intent: flight_date
+  examples: |
+    - [2021-11-22] (date)
+    - on [2021-11-22] (date)
+    - date [2021-11-22] (date)
+    - [11/22/2021] (date)
+    - on [11/22/2021] (date)
+    - date [11/22/2021] (date)
+    - [2020-05-02]
+    - [5/2/2020]
+
+- intent: class_level
+  examples: |
+    - [Economy] (class)
+    - [economy] (class)
+    - [Premium Economy] (class)
+    - [premium economy] (class)
+    - [Business] (class)
+    - [business] (class)
+    - [First] (class)
+    - [first] (class)
+
+- intent: stops_or_not
+  examples: |
+    - [nonstop] (stops)
+    - [nonstops] (stops)
+    - [stops] (stops)
+    - [stop] (stops)
+
+- regex: ticket_numbers
+  examples: |
+    - \d{1, 2}
+- intent: nums_ticket
+  examples: |
+    - [1] ticket (ticket_numbers)
+    - [2] tickets (ticket_numbers)
+    - [3] tickets (ticket_numbers)
+    - [4] tickets (ticket_numbers)
+    - [5] tickets (ticket_numbers)
+    - [6] tickets (ticket_numbers)
+    - [7] tickets (ticket_numbers)
+    - [8] tickets (ticket_numbers)
+    - [9] tickets (ticket_numbers)
+    - [10] tickets (ticket_numbers)
+    - [11] tickets (ticket_numbers)
+    - [12] tickets (ticket_numbers)
+
+- intent: customer_names
+  examples: |
+    - [Zac Mustang] (names)
+    - My name is [Zac Mustang] (names)
+    - I am [Zac Mustang] (names)
+    - [Rose Snow] (names)
+    - My name [Rose Snow] (names)
+    - [Rose Snow, Zac Mustang] (names)
+    - [Jack Sand, Jason Le, Austin Icihkawa] (names)
+    - [Yizhan Wong] (names)
+    - [Yanz zhang] (names)
+    - [john snow] (names)
+    - [heather zhou] (names)
+    - [Jason Zac] (names)
+    - [Michael Jackson] (names)
+    - [David Copperfield] (names)
+    - [Rita Ora] (names)
+    - [Mark Jhonson] (names)
+    - [Tom Hanks] (names)
+
+- regex: phone_numbers
+  examples: |
+    - \d{10}
+- intent: contact_info
+  examples: |
+    - number is [408-777-7879] (phone_numbers)
+    - number [4087777879] (phone_numbers)
+    - My phone number is [408-777-7879] (phone_numbers)
+    - My phone number is [4087777879] (phone_numbers)
+    - My number is [408-777-7879] (phone_numbers)
+    - My number is [4087777879] (phone_numbers)
+    - number [510-283-8462] (phone_numbers)
+    - num is [8192135521] (phone_numbers)
+    - numb [510-283-8462] (phone_numbers)
+
+- intent: another_flight
+  examples: |
+    - Yes
+    - I want to book another flight
+    - Keep booking
+    - Book another flight
+    - Book more
+    - yes
+    - Another flight
+
+- intent: end_actions
+  examples: |
+    - No
+    - End
+    - end process
+    - end booking
+    - done
+    - finish booking
+    - bye
+    - thanks
+    - thank you
+    - goodbye
+    - leave
+
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
