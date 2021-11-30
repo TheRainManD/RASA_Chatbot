@@ -26,7 +26,7 @@
 11. Your input -> Tom Hanks 
 12. Your input -> phone num is 4087773509 (if you enter "phone num is 408777" the system will print error message)
 13. Your input -> finish / that's it \
-14. Your input -> bye
+14. Your input -> bye \
 To book another flight:
 15. Your input -> new flight (Then you can file another form) \
 To end or interrupt a booking process:
