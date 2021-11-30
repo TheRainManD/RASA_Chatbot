@@ -17,7 +17,7 @@
 2. Your input -> great or Your input -> terrible
 3. Your input -> what can you do / how can you help me
 4. Your input -> search flights / book flights
-5. Your input -> San Jose (if you enter "san jos" the system will print error message)
+5. Your input -> San Jose (if you enter "San Jos" the system will print error message)
 6. Your input -> Kunming
 7. Your input -> 12/24/2021 (if you enter "11/22/201" or "1/5/2022" the system will print error message)
 8. Your input -> nonstop (if you enter "nonstopsss" the system will print error message)
