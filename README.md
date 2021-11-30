@@ -29,9 +29,8 @@
 14. Your input -> bye \
 To book another flight:
 15. Your input -> new flight (Then you can file another form) \
-To end or interrupt a booking process:
-16. Your input -> finish (Enter "finish" anytime to interrupt the booking process)
-17. Your input -> new flight (Enter "new flight" anytime to start a new form for booking process)
+To start a new booking process or interrupt a booking process and start from beginning again:
+16. Your input -> new flight (Enter "new flight" anytime to start a new form for booking process)
 
 ## Reject Service Case:
 1. Your input -> hi
