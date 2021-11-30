@@ -22,9 +22,9 @@
 7. Your input -> 12/24/2021 (if you enter "11/22/201" or "1/5/2022" the system will print error message)
 8. Your input -> nonstop (if you enter "nonstopsss" the system will print error message)
 9. Your input -> business 
-10. Your input -> 1 ticket (if you enter "san jos" the system will print error message)
-11. Your input -> Tom Hanks
-12. Your input -> phone num is 4087773509
+10. Your input -> 1 ticket (if you enter "three tickets" the system will print error message)
+11. Your input -> Tom Hanks 
+12. Your input -> phone num is 4087773509 (if you enter "phone num is 408777" the system will print error message)
 13. Your input -> finish / that's it \
 14. Your input -> bye
 To book another flight:
