@@ -41,5 +41,5 @@ To end or interrupt a booking process:
 
 ## Return Customer Case:
 1. Your input -> hi
-2. Your input -> book / search \
+2. Your input -> book \
 Then start filling the form
