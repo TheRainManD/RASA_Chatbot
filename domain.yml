@@ -80,7 +80,7 @@ responses:
   - text: "Invalid answer."
 
   utter_ask_search_form_5_cabin_class:
-  - text: "Do you want search for Econony, Premium Economy, Business, or First class?"
+  - text: "Do you want search for Economy, Premium Economy, Business, or First class?"
 
   utter_ask_5_cabin_class:
   - text: "Invalid cabin class."

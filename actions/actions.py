@@ -128,7 +128,7 @@ class ValidateSearchForm(FormValidationAction):
     
     def validate_8_contact_info(self, slot_value: Any, dispatcher: CollectingDispatcher, tracker: Tracker,
                                       domain: DomainDict) -> Dict[Text, Any]:
-        phone_numbers = re.findall(r"\d{10}", slot_value)[0]
+        phone_numbers = re.findall(r"\d+", slot_value)[0]
         if phone_numbers and len(phone_numbers) == 10:
             self.validation_events.append(SlotSet("8_contact_info", phone_numbers))
             return {"8_contact_info": phone_numbers}
