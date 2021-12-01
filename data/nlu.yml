@@ -190,6 +190,7 @@ nlu:
 - intent: to_location
   examples: |
     - [kunming] (destination)
+    - [Kunming] (destination)
     - [tokyo] (destination)
     - [london] (destination)
     - [berlin] (destination)
@@ -313,6 +314,20 @@ nlu:
     - Book more
     - yes
     - Another flight
+
+- intent: restrictions
+  examples: |
+    - any restriction?
+    - is there any restrictions?
+    - restrictions
+    - restrictions?
+    - any restriction about this flight?
+    - any restriction related to the flight?
+    - restrictions about flight?
+    - restrictions related to the flight?
+    - restrictions from government?
+    - any restriction from government?
+    - restriction?
 
 - intent: end_actions
   examples: |

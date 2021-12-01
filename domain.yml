@@ -22,6 +22,7 @@ intents:
   - bot_challenge
   - new_form
   - done_with_bot
+  - restrictions
 
 entities:
   - departure
@@ -127,6 +128,9 @@ responses:
 
   utter_thank_customer:
   - text: "Thank you for choosing CalFly. Have a nice day."
+
+  utter_restriction_msg:
+  - text: "Here are the updated information: https://www.cdc.gov/coronavirus/2019-ncov/travelers/international-travel/index.html"
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."

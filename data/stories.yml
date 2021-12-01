@@ -81,6 +81,8 @@ stories:
   - action: utter_finished_form
   - action: action_confirmation_msg
   - action: utter_next_step
+  - intent: restrictions
+  - action: utter_restriction_msg
 
 
 
