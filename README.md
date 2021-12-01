@@ -16,7 +16,7 @@
 1. Your input -> hi
 2. Your input -> great or Your input -> terrible
 3. Your input -> what can you do / how can you help me
-4. Your input -> search flights / book flights
+4. Your input -> book / book for a flight
 5. Your input -> San Jose (if you enter "San Jos" the system will print error message)
 6. Your input -> Kunming
 7. Your input -> 12/24/2021 (if you enter "11/22/201" or "1/5/2022" the system will print error message)
@@ -25,18 +25,19 @@
 10. Your input -> 1 ticket (if you enter "three tickets" the system will print error message)
 11. Your input -> Tom Hanks 
 12. Your input -> phone num is 4087773509 (if you enter "phone num is 408777" the system will print error message)
-13. Your input -> finish / that's it \
-14. Your input -> bye \
+13. Your input -> any restrictions?
+14. Your input -> finish / that's it \
+15. Your input -> bye \
 To book another flight:
-15. Your input -> new flight (Then you can file another form) \
+16. Your input -> new flight (Then you can file another form) \
 To start a new booking process or interrupt a booking process and start from beginning again:
-16. Your input -> new flight (Enter "new flight" anytime to start a new form for booking process)
+17. Your input -> new flight (Enter "new flight" anytime to start a new form for booking process)
 
 ## Reject Service Case:
 1. Your input -> hi
 2. Your input -> great or Your input -> terrible
 3. Your input -> what can you do / how can you help me
-4. Your input -> no thank you / nope / don't need it
+4. Your input -> don't need it / nope 
 
 ## Return Customer Case:
 1. Your input -> hi
